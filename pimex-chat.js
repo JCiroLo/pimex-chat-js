@@ -39,7 +39,7 @@ w.ChatPimex = {
     const bn = `button-pimex-${cd.id}`
     const e = `
       #chat-pimex-${cd.id}{ position: fixed;  bottom: 0;  right: 80px;  z-index: 999;  border: none;  width: 400px;  height: 700px;} 
-      #${bn} { background-color: #134251; border-radius: 50%;  position: fixed;  bottom: ${pos.y}px;  right: ${pos.y}px;  z-index: 1000;  width: 60px;  height: 60px;  padding: 0;  border: none;  outline: none;}
+      #${bn} { background-color: #134251; border-radius: 50%;  position: fixed;  bottom: ${pos.y}px;  right: ${pos.x}px;  z-index: 1000;  width: 60px;  height: 60px;  padding: 0;  border: none;  outline: none;}
       #${bn}.active .open {  opacity: 0;  transform: scale(0.1) rotate(90deg);}
       #${bn}.active .close {  opacity: 1;  transform: scale(1) rotate(0);}
       #${bn} img {  position: absolute;  top: 0;  left: 0;  width: 100%;  height: 100%;}
