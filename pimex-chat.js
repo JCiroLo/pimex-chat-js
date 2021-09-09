@@ -34,15 +34,15 @@ w.ChatPimex = {
       return p
     }
     cd = JSON.parse(ls.getItem('pimexChatData')) || (await c())
-    const bn = `#button-pimex-${cd.id}`
+    const bn = `button-pimex-${cd.id}`
     const e = `
       #chat-pimex-${cd.id}{ position: fixed;  bottom: 0;  right: 80px;  z-index: 999;  border: none;  width: 400px;  height: 700px;} 
-      ${bn} { background-color: #134251; border-radius: 50%;  position: fixed;  bottom: 0;  right: 0;  z-index: 1000;  width: 60px;  height: 60px;  padding: 0;  border: none;  outline: none;}
-      ${bn}.active .open {  opacity: 0;  transform: scale(0.1) rotate(90deg);}
-      ${bn}.active .close {  opacity: 1;  transform: scale(1) rotate(0);}
-      ${bn} img {  position: absolute;  top: 0;  left: 0;  width: 100%;  height: 100%;}
-      ${bn} .open {  transition: transform 0.2s ease-out, opacity 0.2s ease-out;  transform: scale(1) rotate(0);}
-      ${bn} .close {  transition: transform 0.2s ease-out, opacity 0.2s ease-out;  opacity: 0;  transform: scale(0.1) rotate(-90deg);}`
+      #${bn} { background-color: #134251; border-radius: 50%;  position: fixed;  bottom: 0;  right: 0;  z-index: 1000;  width: 60px;  height: 60px;  padding: 0;  border: none;  outline: none;}
+      #${bn}.active .open {  opacity: 0;  transform: scale(0.1) rotate(90deg);}
+      #${bn}.active .close {  opacity: 1;  transform: scale(1) rotate(0);}
+      #${bn} img {  position: absolute;  top: 0;  left: 0;  width: 100%;  height: 100%;}
+      #${bn} .open {  transition: transform 0.2s ease-out, opacity 0.2s ease-out;  transform: scale(1) rotate(0);}
+      #${bn} .close {  transition: transform 0.2s ease-out, opacity 0.2s ease-out;  opacity: 0;  transform: scale(0.1) rotate(-90deg);}`
 
     const s = document.createElement('style')
     if (s.styleSheet) {
