@@ -1,17 +1,19 @@
 const d = document
 const w = window
 const ls = localStorage
+const u = 'http://localhost:4000'
+const ui = 'http://localhost:8081'
 let cd = {}
 w.ChatPimex = {
   init: async function ({ id, token }) {
     const a = 'Basic ' + btoa(`${id}:${token}`)
     async function c () {
-      const ru = await fetch('http://localhost:4000/user', {
+      const ru = await fetch(`${u}/user`, {
         method: 'GET',
         headers: { Authorization: a }
       })
       const uId = await ru.json()
-      const rc = await fetch('http://localhost:4000/chat', {
+      const rc = await fetch(`${u}/chat`, {
         method: 'POST',
         headers: {
           Authorization: a,
@@ -32,7 +34,15 @@ w.ChatPimex = {
       return p
     }
     cd = JSON.parse(ls.getItem('pimexChatData')) || (await c())
-    const e = `#chat-pimex-123{ position: fixed;  bottom: 0;  right: 80px;  z-index: 999;  border: none;  width: 400px;  height: 700px;} #button-pimex-123 { background-color: transparent;  position: fixed;  bottom: 20px;  right: 100px;  z-index: 1000;  width: 60px;  height: 60px;  padding: 0;  border: none;  outline: none;}#button-pimex-123.active .open {  opacity: 0;  transform: scale(0.1) rotate(90deg);}#button-pimex-123.active .close {  opacity: 1;  transform: scale(1) rotate(0);}#button-pimex-123 img {  position: absolute;  top: 0;  left: 0;  width: 100%;  height: 100%;}#button-pimex-123 .open {  transition: transform 0.2s ease-out, opacity 0.2s ease-out;  transform: scale(1) rotate(0);}#button-pimex-123 .close {  transition: transform 0.2s ease-out, opacity 0.2s ease-out;  opacity: 0;  transform: scale(0.1) rotate(-90deg);}`
+    const bn = `#button-pimex-${cd.id}`
+    const e = `
+      #chat-pimex-${cd.id}{ position: fixed;  bottom: 0;  right: 80px;  z-index: 999;  border: none;  width: 400px;  height: 700px;} 
+      ${bn} { background-color: #134251; border-radius: 50%;  position: fixed;  bottom: 0;  right: 0;  z-index: 1000;  width: 60px;  height: 60px;  padding: 0;  border: none;  outline: none;}
+      ${bn}.active .open {  opacity: 0;  transform: scale(0.1) rotate(90deg);}
+      ${bn}.active .close {  opacity: 1;  transform: scale(1) rotate(0);}
+      ${bn} img {  position: absolute;  top: 0;  left: 0;  width: 100%;  height: 100%;}
+      ${bn} .open {  transition: transform 0.2s ease-out, opacity 0.2s ease-out;  transform: scale(1) rotate(0);}
+      ${bn} .close {  transition: transform 0.2s ease-out, opacity 0.2s ease-out;  opacity: 0;  transform: scale(0.1) rotate(-90deg);}`
     const s = document.createElement('style')
     if (s.styleSheet) {
       s.styleSheet.cssText = e
@@ -41,8 +51,8 @@ w.ChatPimex = {
     }
     d.getElementsByTagName('head')[0].appendChild(s)
     const i = d.createElement('iframe')
-    i.id = 'chat-pimex-123'
-    i.src = `http://localhost:8081/${cd.userId}/${cd.id}`
+    i.id = `chat-pimex-123`
+    i.src = `${ui}/${cd.userId}/${cd.id}`
     i.style.display = 'none'
     d.querySelector('body').appendChild(i)
     const b = d.createElement('button')
@@ -51,8 +61,8 @@ w.ChatPimex = {
     const iC = d.createElement('img')
     iO.classList.add('open')
     iC.classList.add('close')
-    iO.src = 'https://es.pimex.co/wp-content/uploads/2021/09/open.png'
-    iC.src = 'https://es.pimex.co/wp-content/uploads/2021/09/close.png'
+    iO.src = 'https://es.pimex.co/wp-content/uploads/2021/09/open_btn.png'
+    iC.src = 'https://es.pimex.co/wp-content/uploads/2021/09/close_btn.png'
     iO.alt = 'Open'
     iC.alt = 'Close'
     b.onclick = function () {
