@@ -43,6 +43,7 @@ w.ChatPimex = {
       ${bn} img {  position: absolute;  top: 0;  left: 0;  width: 100%;  height: 100%;}
       ${bn} .open {  transition: transform 0.2s ease-out, opacity 0.2s ease-out;  transform: scale(1) rotate(0);}
       ${bn} .close {  transition: transform 0.2s ease-out, opacity 0.2s ease-out;  opacity: 0;  transform: scale(0.1) rotate(-90deg);}`
+
     const s = document.createElement('style')
     if (s.styleSheet) {
       s.styleSheet.cssText = e
@@ -51,12 +52,12 @@ w.ChatPimex = {
     }
     d.getElementsByTagName('head')[0].appendChild(s)
     const i = d.createElement('iframe')
-    i.id = `chat-pimex-123`
+    i.id = `chat-pimex-${cd.id}`
     i.src = `${ui}/${cd.userId}/${cd.id}`
     i.style.display = 'none'
     d.querySelector('body').appendChild(i)
     const b = d.createElement('button')
-    b.id = 'button-pimex-123'
+    b.id = bn
     const iO = d.createElement('img')
     const iC = d.createElement('img')
     iO.classList.add('open')
