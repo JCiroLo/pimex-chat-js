@@ -43,12 +43,12 @@ w.ChatPimex = {
         visibility: hidden;
         position: fixed;  
         bottom: 0;  
-        right: 80px;  
+        right: 20px;
         z-index: 9999;  
         border: none;  
         width: 400px;  
         height: 700px;
-        transform: translateY(-20px);
+        transform: translateY(50px);
         transition: opacity 0.2s ease-out, visibility 0.2s ease-out, transform 0.2s ease-out;
       } 
       #chat-pimex-${cd.id}.active{
