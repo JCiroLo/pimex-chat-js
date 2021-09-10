@@ -48,8 +48,8 @@ w.ChatPimex = {
         border: none;  
         width: 400px;  
         height: 700px;
-        transform: translateY(50px);
-        transition: opacity 0.2s ease-out, visibility 0.2s ease-out, transform 0.2s ease-out;
+        transform: translateY(25px);
+        transition: opacity 0.2s ease-out, visibility 0.2s ease-out, transform 0.1s ease-out;
       } 
       #chat-pimex-${cd.id}.active{
         opacity: 1;
@@ -72,7 +72,6 @@ w.ChatPimex = {
     const i = d.createElement('iframe')
     i.id = `chat-pimex-${cd.id}`
     i.src = `${ui}/${cd.userId}/${cd.id}`
-    i.style.display = 'none'
     d.querySelector('body').appendChild(i)
     const b = d.createElement('button')
     b.id = bn
