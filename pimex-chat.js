@@ -72,7 +72,6 @@ w.ChatPimex = {
     const i = d.createElement('iframe')
     i.id = `chat-pimex-${cd.id}`
     i.src = `${ui}/${cd.userId}/${cd.id}`
-    d.querySelector('body').appendChild(i)
     const b = d.createElement('button')
     b.id = bn
     const iO = d.createElement('img')
@@ -87,8 +86,16 @@ w.ChatPimex = {
       b.classList.toggle('active')
       i.classList.toggle('active')
     }
-    b.appendChild(iO)
-    b.appendChild(iC)
-    d.querySelector('body').appendChild(b)
+    function l () {
+      d.querySelector('body').appendChild(i)
+      b.appendChild(iO)
+      b.appendChild(iC)
+      d.querySelector('body').appendChild(b)
+    }
+    if (w.attachEvent) {
+      w.attachEvent('onload', l)
+    } else {
+      w.addEventListener('load', l, false)
+    }
   }
 }
