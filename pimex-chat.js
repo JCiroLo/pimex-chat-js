@@ -4,7 +4,6 @@ const ls = localStorage;
 const ua = "http://localhost:4000";
 const ui = "http://localhost:8081";
 let cd = {};
-let p = {};
 async function c(a, u, i) {
   const ru = await fetch(`${u}/user`, {
     method: "GET",
