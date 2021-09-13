@@ -4,12 +4,20 @@ const ls = localStorage
 const ua = 'http://localhost:4000'
 const ui = 'http://localhost:8081'
 let cd = {}
+async function r () {
+  const o = await fetch('https://freegeoip.app/json/', {
+    method: 'GET'
+  })
+  const { city, country_name } = await o.json()
+  return city || country_name
+}
 async function c (a, u, i) {
   const ru = await fetch(`${u}/user`, {
     method: 'GET',
     headers: { Authorization: a }
   })
   const uId = await ru.json()
+  const s = await r()
   const rc = await fetch(`${u}/chat`, {
     method: 'POST',
     headers: {
@@ -19,10 +27,7 @@ async function c (a, u, i) {
     },
     body: JSON.stringify({
       boardId: i,
-      location: {
-        city: 'Medallo papá',
-        country_name: 'Colombia papá'
-      }
+      location: s
     })
   })
   const b = await rc.json()
