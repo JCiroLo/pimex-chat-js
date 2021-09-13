@@ -43,7 +43,7 @@ w.ChatPimex = {
   init: async function ({ id, token }) {
     const a = "Basic " + btoa(`${id}:${token}`);
     cd = JSON.parse(ls.getItem("pimexChatData")) || (await c(a, ua, id));
-    const m = p(a, ua, id)
+    const m = (await p(a, ua, id)) || { right: 20, bottom: 20 };
     const bn = `button-pimex-${cd.id}`;
     const e = `
       #chat-pimex-${cd.id}{ 
