@@ -99,9 +99,7 @@ w.ChatPimex = {
       i.classList.toggle('active')
     }
     function l () {
-      setTimeout(() => {
-        b.classList.add('loaded')
-      }, 500)
+      b.classList.add('loaded')
     }
     if (w.attachEvent) {
       w.attachEvent('onload', l)
