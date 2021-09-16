@@ -45,7 +45,7 @@ w.ChatPimex = {
     const m = (await p(a, ua, id)) || { right: 20, bottom: 20 }
     const bn = `button-pimex-${cd.id}`
     const e = `
-    #chat-pimex-${cd.id}{opacity:0;visibility:hidden;position:fixed;bottom:100px;right:0;z-index:9999;border:none;width: 400px;height:700px;transform:translateY(25px);transition:opacity 0.2s ease-out,visibility 0.2s ease-out,transform 0.1s ease-out;}
+    #chat-pimex-${cd.id}{opacity:0;visibility:hidden;position:fixed;bottom:80px;right:0;z-index:9999;border:none;width:430px;height:calc(100vh - 140px);transform:translateY(25px);transition:opacity 0.2s ease-out,visibility 0.2s ease-out,transform 0.1s ease-out;}
     #chat-pimex-${cd.id}.active{opacity:1;visibility:visible;transform:translateY(0);}
     #${bn}{background-color:#134251;border-radius:50%;position:fixed;bottom:${m.bottom}px;right:${m.right}px;z-index:10000;width:60px;height:60px;padding:0;border:none;outline:none;transform:scale(0);opacity:0;transition: opacity 0.2s ease-out,transform 0.2s ease-out;}
     #${bn}.loaded{transform:scale(1);opacity:1;}
