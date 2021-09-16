@@ -55,7 +55,7 @@ w.ChatPimex = {
     #${bn} .open{transition:transform 0.2s ease-out,opacity 0.2s ease-out;transform:scale(1) rotate(0);}
     #${bn} .close{transition: transform 0.2s ease-out, opacity 0.2s ease-out;opacity:0;transform:scale(0.1) rotate(-90deg);}
     @media (max-width: 767.98px) { 
-      #chat-pimex-${cd.id}{width:100vw;height:calc(100vh-100px);right:0;left:0;}
+      #chat-pimex-${cd.id}{width:100vw;height:calc(100vh - 100px);right:0;left:0;}
     }
     `
     const s = document.createElement('style')
