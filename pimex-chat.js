@@ -67,7 +67,7 @@ w.ChatPimex = {
     d.getElementsByTagName('head')[0].appendChild(s)
     const i = d.createElement('iframe')
     i.id = `chat-pimex-${cd.id}`
-    i.src = `${ui}/${cd.userId}/${cd.id}`
+    i.src = `${ui}/${cd.userId}/${cd.id}/${id}`
     const b = d.createElement('button')
     b.id = bn
     const iO = d.createElement('img')
