@@ -5,9 +5,13 @@ const ua = 'https://pimex-chat-api.herokuapp.com'
 const ui = 'https://pimex-chat-widget.herokuapp.com'
 let cd = {}
 async function r () {
-  const o = await fetch('https://freegeoip.app/json/', { method: 'GET' })
-  const { city, country_name } = await o.json()
-  return city || country_name
+  try {
+    const o = await fetch('https://freegeoip.app/json/', { method: 'GET' })
+    const { city, country_name } = await o.json()
+    return city || country_name
+  } catch (e) {
+    return ''
+  }
 }
 async function c (a, u, i) {
   const ru = await fetch(`${u}/user`, {
